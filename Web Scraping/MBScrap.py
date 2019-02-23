@@ -32,23 +32,26 @@ def scrapMB(fromPage,toPage):
             addr = soup2.find("div",text ="Address")
             try:
                 addr_value = addr.find_next_sibling("div")
+                new_addr_value = addr_value.text
+                new_addr_value = new_addr_value.replace(", Karnataka\nWhat's Nearby","")
             except:
                 addr_value = None
+                
             title_text = title.text
             title_text = title.text.replace("\n","")
             title_text = title_text.replace("\t",'')
+
             temp = title_text.split(" ")
             for length in range(len(temp)):
                 if "" in temp: temp.remove("")
             title_text = " ".join(temp)
-            finalstring = finalstring + "\n {} {} {} {}".format(title_text,price.text,super_area.text,addr_value.text)
+            finalstring = finalstring + "{}\\{}\\{}\\{}".format(title_text,price.text,super_area.text,new_addr_value)
             
-    fp = open("MBData.txt","a+",encoding = "utf-8")
+    fp = open("MBTestData.txt","a+",encoding = "utf-8")
     fp.write(finalstring)
     fp.close()
-    #print(finalstring)
+    print(finalstring)
     
-
 t1 = threading.Thread(target = scrapMB,args = (1,2))
 t2 = threading.Thread(target = scrapMB,args = (2,3))
 t3 = threading.Thread(target = scrapMB,args = (3,4))
