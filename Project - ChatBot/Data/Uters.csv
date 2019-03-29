@@ -1,0 +1,13 @@
+﻿Utterances,Intent
+What is my balance,Balance Inquiry
+Please tell my balance amount,Balance Inquiry
+Show me the balance amount,Balance Inquiry
+Balance of my account,Balance Inquiry
+Tell me the prepaid packs available,Prepaid Packs
+What are the prepaid packs,Prepaid Packs
+Prepaid packs,Prepaid Packs
+Prepaid packs available with you,Prepaid Packs
+Please recharge with the 350 pack,Recharge Order
+Recharge my phone with 150 pack,Recharge Order
+150 pack recharge,Recharge Order
+Can you please recharge my phone with 150 pack,Recharge Order
